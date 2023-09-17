@@ -71,9 +71,9 @@
   background-color: rgb(244, 141, 75);
 }
 
-/* .zero-button {
+.zero-button {
   grid-column: span 2;
-} */
+}
 
 /* .header-container {
   display: flex;
