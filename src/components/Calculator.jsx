@@ -40,7 +40,11 @@ const Calculator = () => {
         operation,
       });
     } else {
-
+      setobj({
+        next,
+        total,
+        operation,
+      });
     }
   };
 
@@ -49,8 +53,16 @@ const Calculator = () => {
       <div className="calculator-title-container">
         <h2 className="calculator-title">Let us do some math!</h2>
       </div>
-      <div>sonick</div>
       <div className="calculator-grid-container">
+        { obj.next ? (
+          <div>
+            { obj.next }
+          </div>
+        ) : (
+          <div>
+            { obj.total }
+          </div>
+        )}
         { btnNames.map((btnName) => (
           <button
             onClick={handleOperation}
