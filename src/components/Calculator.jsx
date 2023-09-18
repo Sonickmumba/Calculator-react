@@ -55,11 +55,11 @@ const Calculator = () => {
       </div>
       <div className="calculator-grid-container">
         { obj.next ? (
-          <div>
+          <div className="output-result">
             { obj.next }
           </div>
         ) : (
-          <div>
+          <div className="output-result">
             { obj.total }
           </div>
         )}
