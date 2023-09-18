@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import calculate from '../logic/calculator';
 // import calculate from '../logic/calculator';
 // import calculate from '../logic/calculator';
 
 const Calculator = () => {
+  // const [obj, setobj] = useState({
+  //   next: null,
+  //   total: 0,
+  //   operation: null,
+  // });
   const btnNames = [
     'AC',
     '+/-',
@@ -26,10 +32,16 @@ const Calculator = () => {
   ];
   const handleOperation = (e) => {
     e.preventDefault();
-    console.log(e.target.name);
-    // console.log('sonick');
-    // const ans = calculate();
-    const btn = document.querySelector('.button-operation');
+    const { next, total, operation } = calculate(obj, e.target.name);
+    if (next === null && total == null) {
+      setobj({
+        next,
+        total: 0,
+        operation,
+      });
+    } else {
+
+    }
   };
 
   return (
