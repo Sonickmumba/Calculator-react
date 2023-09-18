@@ -4,11 +4,11 @@ import calculate from '../logic/calculator';
 // import calculate from '../logic/calculator';
 
 const Calculator = () => {
-  // const [obj, setobj] = useState({
-  //   next: null,
-  //   total: 0,
-  //   operation: null,
-  // });
+  const [obj, setobj] = useState({
+    next: null,
+    total: 0,
+    operation: null,
+  });
   const btnNames = [
     'AC',
     '+/-',
