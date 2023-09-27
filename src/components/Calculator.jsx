@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import calculate from '../logic/calculator';
+// import calculate from '../logic/calculator';
+// import calculate from '../logic/calculator';
 
 const Calculator = () => {
+  const [obj, setobj] = useState({
+    next: null,
+    total: 0,
+    operation: null,
+  });
   const btnNames = [
     'AC',
     '+/-',
@@ -22,6 +30,23 @@ const Calculator = () => {
     '.',
     '=',
   ];
+  const handleOperation = (e) => {
+    e.preventDefault();
+    const { next, total, operation } = calculate(obj, e.target.name);
+    if (next === null && total == null) {
+      setobj({
+        next,
+        total: 0,
+        operation,
+      });
+    } else {
+      setobj({
+        next,
+        total,
+        operation,
+      });
+    }
+  };
 
   return (
     <div className="calculator-main-container">
@@ -29,8 +54,18 @@ const Calculator = () => {
         <h2 className="calculator-title">Let us do some math!</h2>
       </div>
       <div className="calculator-grid-container">
+        { obj.next ? (
+          <div className="output-result">
+            { obj.next }
+          </div>
+        ) : (
+          <div className="output-result">
+            { obj.total }
+          </div>
+        )}
         { btnNames.map((btnName) => (
           <button
+            onClick={handleOperation}
             name={btnName}
             type="button"
             className={`btn ${btnName === '0' ? 'zero-button' : ''}
