@@ -117,6 +117,6 @@
   .calculator-title {
     width: 80%;
     text-align: center;
-    /* margin: 12px auto; */
+    margin: 12px auto;
   }
 }
