@@ -96,7 +96,7 @@
   padding-right: 4px;
 }
 
-@media (max-width: 768px ) {
+@media (max-width: 768px) {
   .calculator-main-container {
     display: flex;
     flex-direction: column;
